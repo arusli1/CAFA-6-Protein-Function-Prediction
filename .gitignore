@@ -1,0 +1,25 @@
+# Large data files (don't push these - they're huge!)
+Train/
+Test/
+*.fasta
+*.obo
+
+# Large data TSV files
+IA.tsv
+sample_submission.tsv
+submission.tsv
+
+# Python/Virtual environments
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+env/
+
+# Jupyter notebook checkpoints
+.ipynb_checkpoints/
+
+# OS files
+.DS_Store
+
