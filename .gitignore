@@ -1,6 +1,8 @@
 # Large data files (don't push these - they're huge!)
 Train/
 Test/
+EMS2_Embeddings/
+ProtBert_Embeddings/
 *.fasta
 *.obo
 
