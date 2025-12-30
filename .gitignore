@@ -8,6 +8,7 @@ Test/
 IA.tsv
 sample_submission.tsv
 submission.tsv
+test_submission.tsv
 
 # Python/Virtual environments
 __pycache__/

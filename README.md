@@ -1,31 +1,25 @@
 # CAFA-6 Protein Function Prediction
 
-## What is this?
+Baseline model using ESM2 embeddings and a linear classifier to predict GO terms for proteins.
 
-Predict what proteins do based on their amino acid sequences.
+## Model
 
-## Quick Start
-
-### On Kaggle (easiest):
-1. Go to the competition page
-2. Click "Code" → "New Notebook"  
-3. Copy your code and run it
-4. Data is already there at `/kaggle/input/`
-
-### Locally:
-1. Install: `pip install pandas biopython`
-2. Download data from Kaggle
-3. Run: `jupyter notebook`
-
-## The Goal
-
-- **Input**: Protein sequences (like "MRWQEMGYIFYPRKLR...")
-- **Output**: GO terms (like "GO:0000001") that describe what the protein does
-- **Submit**: A TSV file with protein_id, GO_term, confidence
+- **Architecture**: Linear classifier (embedding → GO term probabilities)
+- **Embeddings**: ESM2 (1280 dimensions)
+- **Training**: BCEWithLogitsLoss, Adam optimizer, 3 epochs
+- **Output**: Multi-label classification (25,980 GO terms)
 
 ## Files
 
-- `Train/train_sequences.fasta` - protein sequences to learn from
-- `Train/train_terms.tsv` - which proteins have which GO terms
-- `Test/testsuperset.fasta` - proteins you need to predict
-- `sample_submission.tsv` - example of what to submit
+- `first_model.ipynb` - Complete training and prediction pipeline
+- `Train/train_terms.tsv` - Training labels
+- `Test/testsuperset.fasta` - Test sequences
+- `submission.tsv` - Generated predictions
+
+## Usage
+
+Works both locally and on Kaggle. The notebook automatically detects the environment and uses appropriate paths.
+
+## Submission Format
+
+TSV file with columns: `protein_id`, `GO_term`, `confidence` (no header)
